@@ -2,13 +2,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-type Props = {
-  searchParams?: {
-    from?: string;
-  };
-};
-
-export default async function UnauthorizedPage({ searchParams }: Props) {
+export default async function UnauthorizedPage({
+  searchParams,
+}: {
+  searchParams?: { from?: string };
+}) {
   const previousPath = searchParams?.from || "/";
 
   return (
