@@ -8,7 +8,7 @@ type Props = {
   };
 };
 
-export default function UnauthorizedPage({ searchParams }: Props) {
+export default async function UnauthorizedPage({ searchParams }: Props) {
   const previousPath = searchParams?.from || "/";
 
   return (
