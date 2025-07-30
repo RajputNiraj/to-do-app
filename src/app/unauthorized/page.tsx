@@ -4,12 +4,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-export default function UnauthorizedPage({
-  searchParams,
-}: {
-  searchParams?: { from?: string };
-}) {
-  const previousPath = searchParams?.from ?? "/";
+export default function UnauthorizedPage() {
+  const searchParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
+  const previousPath = searchParams.get("from") || "/";
 
   return (
     <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
